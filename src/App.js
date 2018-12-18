@@ -3,14 +3,27 @@ import logo from './logo.svg';
 import './App.css';
 import { observer } from 'mobx-react';
 import Mobx from './mobx/Mobx';
+import { Toggle } from './components/Toggle';
 
 @observer
 class App extends Component {
-  componentDidMount = () => {
-    console.log(Mobx.name)
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      time: 0
+    }
   }
 
+  componentDidMount = () => {
+    // setTimeout(() => {
+    //   this.setState({ time: 1 })
+    // }, 3000)
+  }
+
+
   render() {
+    let { time } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -24,8 +37,10 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            {/* Learn React {Mobx.getCount} */}
           </a>
+          {!time && <Toggle _name={Mobx.name} _count={2} />}
+          {Mobx.getCount}
         </header>
       </div>
     );
