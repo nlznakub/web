@@ -2,7 +2,7 @@ import { computed, observable } from "mobx";
 
 class Mobx {
 
-    @observable name = '';
+    @observable name = 'hello, mobx';
     constructor() {
         console.log(this.name)
     }

@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { observer } from 'mobx-react';
+import Mobx from './mobx/Mobx';
 
 @observer
 class App extends Component {
+  componentDidMount = () => {
+    console.log(Mobx.name)
+  }
+
   render() {
     return (
       <div className="App">
