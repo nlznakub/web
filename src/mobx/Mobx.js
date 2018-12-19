@@ -6,14 +6,21 @@ class Mobx {
     @observable count = 0;
 
     @action increment() {
-
         this.count += 1;
-        console.log(this.count);
+    }
+
+    @action setName(name) {
+        this.name = name;
     }
 
     @computed
     get getCount() {
         return this.count;
+    }
+
+    @computed
+    get getName() {
+        return this.name
     }
 }
 

@@ -11,7 +11,8 @@ class App extends Component {
     super(props)
 
     this.state = {
-      time: 0
+      time: 0,
+      count: 0
     }
   }
 
@@ -27,6 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          {Mobx.getCount}
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
@@ -40,7 +42,7 @@ class App extends Component {
             {/* Learn React {Mobx.getCount} */}
           </a>
           {!time && <Toggle _name={Mobx.name} _count={2} />}
-          {Mobx.getCount}
+          {/* <input value={Mobx.getName} onChange={e => Mobx.setName(e.target.value)} /> */}
         </header>
       </div>
     );

@@ -18,7 +18,7 @@ export const Toggle = ({ _name, _count }) => {
 
     return <Observer>
         {() => <button style={{ fontSize: 30 }} onClick={() => onClick()}>
-            {name}
-        </button>}
+            {name} {`count hook: ${count}`}
+        </button>} 
     </Observer>
 }
